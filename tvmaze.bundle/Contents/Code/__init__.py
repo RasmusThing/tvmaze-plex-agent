@@ -210,7 +210,7 @@ class TVmazeAgent(Agent.TV_Shows):
             # Download the episode thumbnail
             valid_names = list()
 
-            if ep.image.get('original'):
+            if ep.image is not None and ep.image.get('original'):
                 thumb_url = ep.image.get('original')
                 if thumb_url is not None and len(thumb_url) > 0:
                     # Check that the thumb doesn't already exist before downloading it
